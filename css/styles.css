@@ -8,57 +8,87 @@ body {
   overflow-x: hidden;
   display: grid;
   grid-template-rows: 4.375rem 3.125rem 1fr 3.125rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 header {
-    background-color: blue;
-    border: 1px solid black;
-    h1{
-        color: chocolate;
-    }
-    h2{
-        color: darkgreen;
-    }
+  background-color: blue;
+  border: 1px solid black;
+  h1 {
+    color: chocolate;
+  }
+  h2 {
+    color: darkgreen;
+  }
 }
 
 nav {
-    background-color: greenyellow;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    button{
-        margin: .3125rem;
-        width: 4.375rem;
-        height: 1.25rem;
-        margin: .625rem;
-    }
+  background-color: greenyellow;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  button {
+    margin: 0.3125rem;
+    width: 6.25rem;
+    height: 2rem;
+    margin: 0.625rem;
+  }
 }
 
 main {
+  background-color: blueviolet;
+  height: 100%;
 
-    background-color: blueviolet;
-    grid-template-columns: 1fr 12.5rem;
+  .index {
     display: grid;
+    grid-template-columns: 1fr 12.5rem;
+    height: 100%;
     section {
-        margin: .625rem;
-        padding: .625rem;
-        border: 1px solid black;
-        border-radius: .3125rem;
-        background-color: papayawhip;
+      margin: 0.625rem;
+      padding: 0.625rem;
+      border: 1px solid black;
+      border-radius: 0.3125rem;
+      background-color: papayawhip;
     }
-    aside{
-        margin: .625rem;
-        padding: .625rem;
-        border: 1px solid black;
-        border-radius: .3125rem;
-        background-color: crimson;
+    aside {
+      margin: 0.625rem;
+      padding: 0.625rem;
+      border: 1px solid black;
+      border-radius: 0.3125rem;
+      background-color: crimson;
     }
+  }
+
+  .groupMembersSection {
+    display: grid;
+    grid-template-rows: 3.125rem 1fr;
+    margin: 0.625rem;
+    padding: 0.625rem;
+    border: 1px solid black;
+    border-radius: 0.3125rem;
+    background-color: papayawhip;
+    height: 100%;
+
+    .groupMembers {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      justify-content: space-around;
+      article {
+        margin: 0.625rem;
+        padding: 0.625rem;
+        width: 45%;
+        height: 40%;
+        border: 1px solid black;
+        border-radius: 0.3125rem;
+      }
+    }
+  }
 }
 
 footer {
-    background-color: red;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

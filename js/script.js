@@ -8,16 +8,22 @@ let botones = [
   {
     label: "Acerca de. . . ",
     onAction: () => {
+      document.title = "Acerca de...";
       loadPage('pages/about.html');
     },
   },
   {
-    label: "Boton C",
-    onAction: "Apretaste boton C",
+    label: "Contacto",
+    onAction: () => {
+      document.title = "Contacto";
+      loadPage('pages/contacto.html');
+    }
   },
   {
     label: "Boton D",
-    onAction: "Apretaste boton D",
+    onAction: () => {
+      alert('Apretaste el btón D');
+    }
   },
 ];
 
@@ -42,4 +48,36 @@ function loadPage(archivo) {
       console.error("Error al cargar el contenido:", error)
     );
 
+}
+
+
+function validateForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+
+  var isValid = true;
+
+  if (name == "") {
+      document.getElementById('nameError').textContent = "Por favor, ingresa tu nombre";
+      isValid = false;
+  } else {
+      document.getElementById('nameError').textContent = "";
+  }
+
+  if (email == "") {
+      document.getElementById('emailError').textContent = "Por favor, ingresa tu email";
+      isValid = false;
+  } else {
+      document.getElementById('emailError').textContent = "";
+  }
+
+  if (message == "") {
+      document.getElementById('messageError').textContent = "Por favor, ingresa tu mensaje";
+      isValid = false;
+  } else {
+      document.getElementById('messageError').textContent = "";
+  }
+
+  return isValid;
 }

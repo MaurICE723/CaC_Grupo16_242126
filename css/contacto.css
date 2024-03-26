@@ -1,0 +1,39 @@
+.contact {
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  height: 100%;
+  margin: 0.625rem;
+
+  .contactForm {
+    display: grid;
+    grid-template-columns: .45fr .55fr;
+    justify-items: center;
+    align-items: start;
+    
+    .contactFormFields {
+      .field {
+        display: grid;
+        grid-template-columns: 4.6875rem 1fr;
+        justify-content: start;
+
+        input {
+          margin-bottom: 0.625rem;
+        }
+        .interests {
+          label {
+            width: 4.6875rem;
+            margin-left: 0.4375rem;
+          }
+          width: 12.5rem;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: space-around;
+        }
+      }
+      .buttons{
+        display: flex;
+      }
+    }
+  }
+}

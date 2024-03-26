@@ -43,6 +43,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 12.5rem;
     height: 100%;
+
     section {
       margin: 0.625rem;
       padding: 0.625rem;
@@ -59,31 +60,6 @@ main {
     }
   }
 
-  .groupMembersSection {
-    display: grid;
-    grid-template-rows: 3.125rem 1fr;
-    margin: 0.625rem;
-    padding: 0.625rem;
-    border: 1px solid black;
-    border-radius: 0.3125rem;
-    background-color: papayawhip;
-    height: 100%;
-
-    .groupMembers {
-      display: flex;
-      flex-wrap: wrap;
-      height: 100%;
-      justify-content: space-around;
-      article {
-        margin: 0.625rem;
-        padding: 0.625rem;
-        width: 45%;
-        height: 40%;
-        border: 1px solid black;
-        border-radius: 0.3125rem;
-      }
-    }
-  }
 }
 
 footer {
@@ -91,4 +67,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.sectionTitle{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 }

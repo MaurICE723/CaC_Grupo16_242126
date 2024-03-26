@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/Contacto.css" />
+  </head>
+  <body>
+    <div class="contact">
+      <h2>Formulario de Contacto</h2>
+
+      <div class="contactForm">
+        <form class="contactFormFields" onsubmit="return validateForm()">
+          <div class="field">
+            <label for="name">Nombre:</label>
+            <div>
+              <input type="text" id="name" name="name" required />
+              <span id="nameError" class="error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email:</label>
+            <div>
+              <input type="email" id="email" name="email" required />
+              <span id="emailError" class="error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Mensaje:</label>
+            <div>
+              <textarea id="message" name="message" required></textarea>
+              <span id="messageError" class="error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label>Género:</label>
+            <div>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+              />
+              <label for="male">Masculino</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Femenino</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="interests">Intereses:</label>
+            <div class="interests">
+              <input
+                type="checkbox"
+                id="interest1"
+                name="interests[]"
+                value="Deportes"
+              />
+              <label for="interest1">Deportes</label>
+              <input
+                type="checkbox"
+                id="interest2"
+                name="interests[]"
+                value="Música"
+              />
+              <label for="interest2">Música</label>
+              <input
+                type="checkbox"
+                id="interest3"
+                name="interests[]"
+                value="Viajes"
+              />
+              <label for="interest3">Viajes</label>
+              <input
+                type="checkbox"
+                id="interest4"
+                name="interests[]"
+                value="Deportes"
+              />
+              <label for="interest4">Libros</label>
+              <input
+                type="checkbox"
+                id="interest5"
+                name="interests[]"
+                value="Deportes"
+              />
+              <label for="interest5">Peliculas</label>
+              <input
+                type="checkbox"
+                id="interest6"
+                name="interests[]"
+                value="Deportes"
+              />
+              <label for="interest6">Juegos</label>
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+        <lottie-player
+          src="../img/animations/contactUs.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </div>
+  </body>
+</html>

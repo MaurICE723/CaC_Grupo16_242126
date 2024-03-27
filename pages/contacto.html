@@ -1,13 +1,17 @@
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="./css/Contacto.css" />
+    <link rel="stylesheet" href="./css/contacto.css" />
   </head>
-  <body>
+  <body >
     <div class="contact">
       <h2>Formulario de Contacto</h2>
 
       <div class="contactForm">
-        <form class="contactFormFields" onsubmit="return validateForm()">
+        <form
+          class="contactFormFields"
+          id="contactForm"
+          onsubmit="return validateForm()"
+        >
           <div class="field">
             <label for="name">Nombre:</label>
             <div>
@@ -32,13 +36,7 @@
           <div class="field">
             <label>Género:</label>
             <div>
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
+              <input type="radio" id="male" name="gender" value="male" required />
               <label for="male">Masculino</label>
               <input type="radio" id="female" name="gender" value="female" />
               <label for="female">Femenino</label>

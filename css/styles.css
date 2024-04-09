@@ -3,8 +3,17 @@
   padding: 0;
 }
 
+#map {
+  height: 100%; 
+  /* width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-around; */
+
+}
+
 body {
-  height: 100vh;
+  max-height: 100vh;
   overflow-x: hidden;
   display: grid;
   grid-template-rows: 4.375rem 3.125rem 1fr 3.125rem;
@@ -38,6 +47,7 @@ nav {
 main {
   background-color: blueviolet;
   height: 100%;
+  overflow: hidden;
 }
 
 footer {

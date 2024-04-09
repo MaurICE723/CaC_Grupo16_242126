@@ -1,4 +1,6 @@
-let botones = [
+import { loadParks} from './parks.js'
+
+const botones = [
   {
     label: "Home",
     onAction: () => {
@@ -32,7 +34,7 @@ let botones = [
   },
 ];
 
-function loadValues() {
+function loadValues () {
   var elementoBotonera = document.getElementById("botonera");
 
   botones.forEach(function (objeto) {
@@ -49,8 +51,8 @@ function loadValues() {
     sessionStorage.setItem("page", "home");
   }
 
-  loadPage(`pages/${pageValue}.html`);
 }
+
 
 function loadPage() {
   let pageValue = sessionStorage.getItem("page");
@@ -59,8 +61,13 @@ function loadPage() {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("content").innerHTML = data;
+      if(pageValue == "home"){
+        loadParks();
+
+      }
     })
     .catch((error) => console.error("Error al cargar el contenido:", error));
+
 }
 
 function validateForm() {
@@ -141,3 +148,6 @@ function loadForm() {
     }
   }
 }
+
+
+export {loadValues, loadPage  };

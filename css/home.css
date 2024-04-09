@@ -1,20 +1,51 @@
 .index {
-    display: grid;
-    grid-template-columns: 1fr 12.5rem;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 12.5rem;
+  height: 100%;
 
-    section {
-      margin: 0.625rem;
-      padding: 0.625rem;
-      border: 1px solid black;
-      border-radius: 0.3125rem;
-      background-color: papayawhip;
-    }
-    aside {
-      margin: 0.625rem;
-      padding: 0.625rem;
-      border: 1px solid black;
-      border-radius: 0.3125rem;
-      background-color: crimson;
+  section {
+    margin: 0.625rem;
+    padding: 0.625rem;
+    border: 1px solid black;
+    border-radius: 0.3125rem;
+    background-color: papayawhip;
+    /* display: flex;
+    align-items: flex-start;
+    justify-content: flex-end; */
+    article{
+      display: flex;
+      justify-content: space-around;
     }
   }
+  aside {
+    margin: 0.625rem;
+    padding: 0.625rem;
+    border: 1px solid black;
+    border-radius: 0.3125rem;
+    background-color: crimson;
+    overflow-y: auto;
+    max-height: calc(100% - 20px);
+
+    .parkList {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3125rem;
+
+      li {
+        list-style: none;
+        min-height: 1.25rem;
+        height: auto;
+        padding: 0.3125rem;
+        border: 1px solid black;
+        border-radius: 0.3125rem;
+        background-color: pink;
+      }
+    }
+  }
+
+  aside::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: none;
+  }
+}

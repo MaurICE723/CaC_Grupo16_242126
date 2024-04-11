@@ -4,14 +4,20 @@
   height: 100%;
 
   section {
-    margin: 0.625rem;
-    padding: 0.625rem;
-    border: 1px solid black;
-    border-radius: 0.3125rem;
-    background-color: papayawhip;
-    /* display: flex;
-    align-items: flex-start;
-    justify-content: flex-end; */
+    margin: 10px;
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #212920;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+
     article{
       display: flex;
       justify-content: space-around;

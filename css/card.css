@@ -1,0 +1,32 @@
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: center;
+  background-color: #c4d7b2;
+  padding: 10px 0 10px 0;
+  border-radius: 0.3125rem;
+
+  .parkTitle {
+    text-align: center;
+  }
+
+  .parkMainImage {
+    border-radius: 0.3125rem;
+    width: 10.25rem;
+    height: 6.375rem;
+    padding: 0.625rem;
+    border: 2px solid #315132;
+    background-color: #F7FFE5;
+  }
+
+  .parkDescription {
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding: 0 0.3125rem 0 0.3125rem;
+  }
+}

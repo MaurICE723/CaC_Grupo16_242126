@@ -1,18 +1,32 @@
 import { parks } from "./const.js";
 
 function loadParks() {
-  let ul = document.getElementById("parkList");
+  fetch("../pages/card.html")
+    .then((response) => response.text())
+    .then((data) => {
+      const templateContainer = document.createElement("div");
+      templateContainer.innerHTML = data;
 
-  parks.forEach((object) => {
-    let li = document.createElement("li");
-    // let link = document.createElement("a");
+      const template = templateContainer.querySelector("#cardTemplate").content;
+      const ul = document.getElementById("parkList");
 
-    li.textContent = object.name;
-    li.onclick = () => {
-      loadPark(object);
-    };
-    ul.appendChild(li);
-  });
+      parks.forEach((object) => {
+        const card = template.cloneNode(true);
+
+        card.querySelector(".parkTitle").textContent = object.name;
+
+        if (object.images) {
+          card.querySelector(".parkMainImage").src = object.images[0];
+        } else {
+          card.querySelector(".parkMainImage").src ="../img/No_Image_Available.jpg";
+        }
+
+        card.querySelector(".parkDescription").textContent = object.description;
+
+        ul.appendChild(card);
+      });
+    });
+
 }
 
 function loadPark(value) {

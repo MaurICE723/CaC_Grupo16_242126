@@ -5,15 +5,12 @@
 
 #map {
   height: 100%;
-  /* width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: space-around; */
 }
 
 body {
-  background-color: #F7FFE5;
+  background-color: #f7ffe5;
   height: 100vh;
+  min-width: 30rem;
   max-height: 100vh;
   overflow-x: hidden;
   display: grid;
@@ -23,8 +20,7 @@ body {
 
 header {
   background: #a0c49d;
-  display: grid;
-  grid-template-columns: 1fr 30rem;
+  min-width: 31.25rem;
 
   h1 {
     text-align: center;
@@ -34,6 +30,7 @@ header {
     font-weight: 700;
     font-style: normal;
     font-size: 3rem;
+    cursor: pointer;
   }
 
   nav {
@@ -43,7 +40,7 @@ header {
 
     button {
       appearance: none;
-      background-color: #C4D7B2;
+      background-color: #c4d7b2;
       border: 1px solid rgba(27, 31, 35, 0.15);
       border-radius: 6px;
       box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
@@ -107,7 +104,6 @@ footer {
   justify-content: space-around;
   h5 {
     color: #f7ffe5;
-
   }
 }
 
@@ -115,4 +111,92 @@ footer {
   display: flex;
   align-items: center;
   padding-left: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  padding: 10px;
+
+  bottom: 0;
+  transform: translateY(100%);
+  color: black;
+  list-style-type: none;
+  position: absolute;
+  background-color: #e1ecc8;
+  ul {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  min-width: 160px;
+  z-index: 2;
+}
+
+.dropdown-content li {
+  padding: 0.3125rem;
+}
+
+.dropdown-content li:hover {
+  background-color: lightgray;
+}
+
+.menuImage {
+  padding: 10px;
+  font-size: 16px;
+  width: 25px;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .dropdown {
+    display: none;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr 30rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .normalButtonBar {
+    display: none;
+  }
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr 7rem;
+  }
+  .dropdown-content {
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .normalButtonBar {
+    display: none;
+  }
+  .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+  }
+
+  .dropdown-content {
+    right: 0;
+    min-width: calc(100vw - 20px);
+  }
 }

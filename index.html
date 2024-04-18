@@ -13,14 +13,25 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- <script type="text/javascript" src="js/parks.js"></script> -->
     <link rel="icon" href="./img/ico/tree.ico" type="image/x-icon" />
-    <!-- <title>Pagina de proyecto integrador</title> -->
+    <title>Pagina de proyecto integrador</title>
   </head>
   <body>
     <header>
-      <h1>Maravillas al Aire Libre</h1>
-      <nav id="botonera"></nav>
+        <h1 id="homeTitle">Maravillas al Aire Libre</h1>
+
+      <nav id="botonera" class="normalButtonBar"></nav>
+      <div class="dropdown">
+        <img
+          id="dropdownImage"
+          class="menuImage"
+          src="./img/svg/menu.svg"
+          alt="Menú"
+        />
+        <div>
+          <ul class="dropdown-content" id="dropdownContent"></ul>
+        </div>
+      </div>
     </header>
 
     <main id="content"></main>

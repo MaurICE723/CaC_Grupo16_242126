@@ -1,4 +1,5 @@
-import { loadParks} from './parks.js'
+import { loadParks } from "./parks.js";
+import { loadMembers } from "./members.js";
 
 const botones = [
   {
@@ -34,7 +35,7 @@ const botones = [
   },
 ];
 
-function loadValues () {
+function loadValues() {
   var elementoBotonera = document.getElementById("botonera");
 
   botones.forEach(function (objeto) {
@@ -44,15 +45,21 @@ function loadValues () {
     elementoBotonera.appendChild(button);
   });
 
+  var elementoBotonera2 = document.getElementById("dropdownContent");
+  botones.forEach(function (objeto) {
+    var button = document.createElement("li");
+    button.textContent = objeto.label;
+    button.onclick = objeto.onAction;
+    elementoBotonera2.appendChild(button);
+  });
+
   let pageValue = sessionStorage.getItem("page");
 
   if (!pageValue) {
     document.title = "Pagina de proyecto integrador";
     sessionStorage.setItem("page", "home");
   }
-
 }
-
 
 function loadPage() {
   let pageValue = sessionStorage.getItem("page");
@@ -61,13 +68,16 @@ function loadPage() {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("content").innerHTML = data;
-      if(pageValue == "home"){
-        loadParks();
-
+      switch (pageValue) {
+        case "home":
+          loadParks();
+          break;
+        case "about":
+          loadMembers();
+          break;
       }
     })
     .catch((error) => console.error("Error al cargar el contenido:", error));
-
 }
 
 function validateForm() {
@@ -149,5 +159,27 @@ function loadForm() {
   }
 }
 
+document.getElementById("homeTitle").addEventListener("click", (e) => {
+  document.title = "Pagina de proyecto integrador";
+  sessionStorage.setItem("page", "home");
+  loadPage();
+});
 
-export {loadValues, loadPage  };
+document.getElementById("dropdownImage").addEventListener("click", function () {
+  const dropdownContent = document.getElementById("dropdownContent");
+  dropdownContent.style.display =
+    dropdownContent.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", function (event) {
+  const dropdownContent = document.getElementById("dropdownContent");
+  const isClickInside = document
+    .querySelector(".dropdown")
+    .contains(event.target);
+
+  if (!isClickInside) {
+    dropdownContent.style.display = "none";
+  }
+});
+
+export { loadValues, loadPage };

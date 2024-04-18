@@ -5,4 +5,5 @@ function handleLoadPage() {
   loadPage();
 }
 
+
 document.body.onload = handleLoadPage;

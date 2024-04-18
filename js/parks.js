@@ -1,7 +1,7 @@
 import { parks } from "./const.js";
 
 function loadParks() {
-  fetch("../pages/card.html")
+  fetch("../pages/templates/card.html")
     .then((response) => response.text())
     .then((data) => {
       const templateContainer = document.createElement("div");
@@ -18,7 +18,8 @@ function loadParks() {
         if (object.images) {
           card.querySelector(".parkMainImage").src = object.images[0];
         } else {
-          card.querySelector(".parkMainImage").src ="../img/No_Image_Available.jpg";
+          card.querySelector(".parkMainImage").src =
+            "../img/No_Image_Available.jpg";
         }
 
         card.querySelector(".parkDescription").textContent = object.description;
@@ -26,7 +27,6 @@ function loadParks() {
         ul.appendChild(card);
       });
     });
-
 }
 
 function loadPark(value) {

@@ -1,4 +1,4 @@
-import { parks } from "./const.js";
+// import { parks } from "./const.js";
 
 function loadParks() {
   fetch("../pages/templates/card.html")
@@ -9,6 +9,8 @@ function loadParks() {
 
       const template = templateContainer.querySelector("#cardTemplate").content;
       const ul = document.getElementById("parkList");
+
+      const parks = JSON.parse(sessionStorage.getItem("parksValues"));
 
       parks.forEach((object) => {
         const card = template.cloneNode(true);

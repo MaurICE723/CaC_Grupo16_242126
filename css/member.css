@@ -1,7 +1,6 @@
 .groupMembersSection {
   display: flex;
   flex-direction: column;
-  /* grid-template-rows: 5rem 1fr; */
   height: 100%;
   margin-bottom: 0.9375rem;
 
@@ -24,7 +23,7 @@
         background-color: #c4d7b2;
         padding: 0.9375rem 0.9375rem;
         margin: 0.625rem 0.9375rem 0 0.9375rem;
-
+        border-radius: .3125rem;
         .memberName {
           display: flex;
           align-items: center;

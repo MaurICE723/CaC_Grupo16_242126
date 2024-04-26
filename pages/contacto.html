@@ -1,107 +1,120 @@
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="./css/contacto.css" />
-  </head>
-  <body >
-    <div class="contact">
-      <h2>Formulario de Contacto</h2>
 
-      <div class="contactForm">
-        <form
-          class="contactFormFields"
-          id="contactForm"
-          onsubmit="return validateForm()"
-        >
-          <div class="field">
-            <label for="name">Nombre:</label>
-            <div>
-              <input type="text" id="name" name="name" required />
-              <span id="nameError" class="error"></span>
-            </div>
-          </div>
-          <div class="field">
-            <label for="email">Email:</label>
-            <div>
-              <input type="email" id="email" name="email" required />
-              <span id="emailError" class="error"></span>
-            </div>
-          </div>
-          <div class="field">
-            <label for="message">Mensaje:</label>
-            <div>
-              <textarea id="message" name="message" required></textarea>
-              <span id="messageError" class="error"></span>
-            </div>
-          </div>
-          <div class="field">
-            <label>Género:</label>
-            <div>
-              <input type="radio" id="male" name="gender" value="male" required />
-              <label for="male">Masculino</label>
-              <input type="radio" id="female" name="gender" value="female" />
-              <label for="female">Femenino</label>
-            </div>
-          </div>
-          <div class="field">
-            <label for="interests">Intereses:</label>
-            <div class="interests">
-              <input
-                type="checkbox"
-                id="interest1"
-                name="interests[]"
-                value="Deportes"
-              />
-              <label for="interest1">Deportes</label>
-              <input
-                type="checkbox"
-                id="interest2"
-                name="interests[]"
-                value="Música"
-              />
-              <label for="interest2">Música</label>
-              <input
-                type="checkbox"
-                id="interest3"
-                name="interests[]"
-                value="Viajes"
-              />
-              <label for="interest3">Viajes</label>
-              <input
-                type="checkbox"
-                id="interest4"
-                name="interests[]"
-                value="Deportes"
-              />
-              <label for="interest4">Libros</label>
-              <input
-                type="checkbox"
-                id="interest5"
-                name="interests[]"
-                value="Deportes"
-              />
-              <label for="interest5">Peliculas</label>
-              <input
-                type="checkbox"
-                id="interest6"
-                name="interests[]"
-                value="Deportes"
-              />
-              <label for="interest6">Juegos</label>
-            </div>
-          </div>
-          <div class="buttons">
-            <button type="submit">Enviar</button>
-          </div>
-        </form>
-        <lottie-player
-          src="../img/animations/contactUs.json"
-          background="transparent"
-          speed="1"
-          style="width: 300px; height: 300px"
-          loop
-          autoplay
-        ></lottie-player>
-      </div>
+<head>
+  <link rel="stylesheet" href="./css/contacto.css" />
+</head>
+
+<body>
+  <section class="contact">
+    <div>
+      <h1>Tu parque</h1>
+      <p> Compartinos algun parque que te haya gustado y te gustaria que mas gente lo conozca. </p>
+
     </div>
-  </body>
+
+
+    <div class="contactForm">
+
+
+      <form class="contactFormFields" id="contactForm" onsubmit="return validateForm()">
+        <div class="field">
+          <label for="name">Nombre del parque:</label>
+          <div class="textInput">
+            <input type="text" id="name" name="name" required />
+            <span id="nameError" class="error"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">Descripcion:</label>
+          <div  class="textInput">
+            <textarea id="description" name="description" required></textarea>
+            <span id="messageError" class="error"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Que clase de lugar es?</label>
+          <div>
+            <input type="radio" id="male" name="type" value="male" required />
+            <label for="male">Plaza</label>
+            <input type="radio" id="female" name="type" value="female" />
+            <label for="female">Parque</label>
+            <input type="radio" id="female" name="type" value="female" />
+            <label for="female">Lugar historico</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="interests">Instalaciones:</label>
+          <div class="interests">
+            <div class="interest">
+              <input type="checkbox" id="interest1" name="interests[]" value="Juegos" />
+              <label for="interest1">Juegos</label>
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest2" name="interests[]" value="Bancos" />
+              <label for="interest1">Bancos</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest3" name="interests[]" value="Bebederos" />
+              <label for="interest1">Bebederos</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest4" name="interests[]" value="Bancos" />
+              <label for="interest1">Bancos</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest5" name="interests[]" value="Area de entrenamiento físico" />
+              <label for="interest1">Area de entrenamiento físico</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest6" name="interests[]" value="Area de rehabilitación" />
+              <label for="interest1">Area de rehabilitación</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest7" name="interests[]" value="Canil" />
+              <label for="interest1">Canil</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest8" name="interests[]" value="Fuente" />
+              <label for="interest1">Fuente</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest9" name="interests[]" value="Pista de patinaje" />
+              <label for="interest1">Pista de patinaje</label>
+
+            </div>
+            <div class="interest">
+              <input type="checkbox" id="interest10" name="interests[]" value="Calesita" />
+              <label for="interest1">Calesita</label>
+
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="name">Ubicación:</label>
+          <div class="textInput">
+            <input type="text" id="location" name="location" required />
+            <span id="locationError" class="error"></span>
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+
+      <lottie-player src="../img/animations/contactUs.json" background="transparent" speed="1"
+        style="width: 300px; height: 300px" loop autoplay />
+
+  </section>
+  <!-- </lottie-player> -->
+  </div>
+</body>
+
 </html>

@@ -27,12 +27,6 @@ const botones = [
       loadForm();
     },
   },
-  {
-    label: "Boton D",
-    onAction: () => {
-      alert("Apretaste el botón D");
-    },
-  },
 ];
 
 function loadValues() {
@@ -181,5 +175,9 @@ document.addEventListener("click", function (event) {
     dropdownContent.style.display = "none";
   }
 });
+
+
+
+
 
 export { loadValues, loadPage };

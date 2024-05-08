@@ -1,5 +1,3 @@
-// import { parks } from "./const.js";
-
 function loadParks() {
   fetch("../pages/templates/card.html")
     .then((response) => response.text())
@@ -15,6 +13,20 @@ function loadParks() {
       parks.forEach((object) => {
         const card = template.cloneNode(true);
 
+        card.querySelector(".card").addEventListener("click", function () {
+
+          fetch("../pages/templates/park.html")
+            .then((response) => response.text())
+            .then((parkData) => {
+              document.getElementById("content").innerHTML = parkData;
+
+              document.getElementById("parkName").textContent = object.name;
+              document.getElementById("parkDescription").textContent =
+                object.description;
+              document.getElementById("parkPicture").src = object.images[0];
+            });
+        });
+
         card.querySelector(".parkTitle").textContent = object.name;
 
         if (object.images) {
@@ -29,24 +41,6 @@ function loadParks() {
         ul.appendChild(card);
       });
     });
-}
-
-function loadPark(value) {
-  let mapIframe = document.getElementById("map");
-  let parkTitle = document.getElementById("mapTitle");
-
-  let iFrame = document.createElement("iframe");
-  iFrame.src = value.url;
-  iFrame.width = "450";
-  iFrame.height = "350";
-  iFrame.loading = "lazy";
-  iFrame.referrerpolicy = "no-referrer-when-downgrade";
-
-  if (mapIframe.firstChild) {
-    mapIframe.removeChild(mapIframe.firstChild);
-  }
-  mapIframe.appendChild(iFrame);
-  parkTitle.textContent = value.name;
 }
 
 export { loadParks };

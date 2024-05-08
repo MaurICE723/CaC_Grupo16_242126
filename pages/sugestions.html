@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../css/sugestions.css" />
+</head>
+
+<body>
+  <section class="contact">
+    <div>
+      <h1>Tu parque</h1>
+      <p> Compartinos algun parque que te haya gustado y te gustaria que mas gente lo conozca. </p>
+    </div>
+
+    <div class="sugestionsForm">
+      <form class="sugestionsFormFields" id="sugestionsForm" >
+        <div class="field">
+          <label for="name">Nombre del parque:</label>
+          <div class="textInput">
+            <input type="text" id="name" name="name" autocomplete="off" />
+            <span id="nameError" class="error"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">Descripcion:</label>
+          <div class="textInput">
+            <textarea id="description" name="description"></textarea>
+            <span id="messageError" class="error"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <p>Que clase de lugar es?</p>
+          <div>
+            <input type="radio" id="plaza" name="type" value="plaza" />
+            <label for="plaza">Plaza</label>
+            <input type="radio" id="parque" name="type" value="parque" />
+            <label for="parque">Parque</label>
+            <input type="radio" id="lugarHistorico" name="type" value="lugarHistorico" />
+            <label for="lugarHistorico">Lugar historico</label>
+          </div>
+        </div>
+        <div class="field">
+          <p>Instalaciones:</p>
+          <div class="interests">
+            <input type="checkbox" id="juegos" name="juegos" />
+            <label for="juegos">Juegos</label>
+
+            <input type="checkbox" id="bancos" name="bancos" />
+            <label for="bancos">Bancos</label>
+
+            <input type="checkbox" id="bebederos" name="bebederos" />
+            <label for="bebederos">Bebederos</label>
+
+            <input type="checkbox" id="areaEntrenamientoFisico" name="areaEntrenamientoFisico" />
+            <label for="areaEntrenamientoFisico">Area de entrenamiento físico</label>
+
+            <input type="checkbox" id="areaDeRehabilitación" name="areaDeRehabilitación" />
+            <label for="areaDeRehabilitación">Area de rehabilitación</label>
+
+            <input type="checkbox" id="canil" name="canil" />
+            <label for="canil">Canil</label>
+
+            <input type="checkbox" id="fuente" name="fuente" />
+            <label for="fuente">Fuente</label>
+
+            <input type="checkbox" id="pistaDePatinaje" name="pistaDePatinaje" />
+            <label for="pistaDePatinaje">Pista de patinaje</label>
+
+            <input type="checkbox" id="calesita" name="calesita" />
+            <label for="calesita">Calesita</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="name">Ubicación:</label>
+          <div class="textInput">
+            <input type="text" id="location" name="location" />
+            <span id="locationError" class="error"></span>
+          </div>
+        </div>
+        <div>
+          <input type="text" id="imageUrl" placeholder="Ingrese la URL de la imagen">
+          <button type="button" id="addImage">Agregar Imagen</button>
+          <div id="imageGallery"></div>
+        </div>
+        <div class="buttons">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+      <lottie-player id="animation" src="../img/animations/contactUs.json" background="transparent" speed="1"
+        style="width: 300px; height: 300px" loop autoplay />
+    </div>
+  </section>
+
+</body>
+
+</html>

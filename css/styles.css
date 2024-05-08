@@ -98,6 +98,7 @@ main {
 }
 
 footer {
+  bottom: 0;
   background: #a0c49d;
   display: flex;
   align-items: center;

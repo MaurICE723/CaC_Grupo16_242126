@@ -1,6 +1,6 @@
 const parks = [
   {
-    id: "1",
+    id: 1,
     name: "Parque Indoamericano",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -8,7 +8,7 @@ const parks = [
     images: ["https://www.clarin.com/img/2011/12/21/rJWI1bOCXx_1256x620.jpg"],
   },
   {
-    id: "2",
+    id: 2,
     name: "Parque de la ciudad",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -18,7 +18,7 @@ const parks = [
     ],
   },
   {
-    id: "3",
+    id: 3,
     name: "Parque Avellaneda",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -28,7 +28,7 @@ const parks = [
     ],
   },
   {
-    id: "4",
+    id: 4,
     name: "Parque la Isla de la Paternal",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -38,7 +38,7 @@ const parks = [
     ],
   },
   {
-    id: "5",
+    id: 5,
     name: "Parque Sarmiento",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -48,7 +48,7 @@ const parks = [
     ],
   },
   {
-    id: "6",
+    id: 6,
     name: "Paseo El Rosedal",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -58,7 +58,7 @@ const parks = [
     ],
   },
   {
-    id: "7",
+    id: 7,
     name: "Jardín Japonés",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -68,7 +68,7 @@ const parks = [
     ],
   },
   {
-    id: "8",
+    id: 8,
     name: "Parque Las Heras",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -78,7 +78,7 @@ const parks = [
     ],
   },
   {
-    id: "9",
+    id: 9,
     name: "Plaza General San Martín",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -88,7 +88,7 @@ const parks = [
     ],
   },
   {
-    id: "10",
+    id: 10,
     name: "Plaza del Congreso",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -98,7 +98,7 @@ const parks = [
     ],
   },
   {
-    id: "11",
+    id: 11,
     name: "Parque Lezama",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -108,7 +108,7 @@ const parks = [
     ],
   },
   {
-    id: "12",
+    id: 12,
     name: "Parque Chacabuco",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -118,7 +118,7 @@ const parks = [
     ],
   },
   {
-    id: "13",
+    id: 13,
     name: "Plaza Catedral",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",
@@ -128,7 +128,7 @@ const parks = [
     ],
   },
   {
-    id: "14",
+    id: 14,
     name: "República de los Niños",
     description:
       "Descripcion breve del Parque Indoamericano con zarasa de por medio",

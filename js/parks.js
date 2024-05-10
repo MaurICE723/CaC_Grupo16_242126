@@ -21,8 +21,8 @@ function loadParks() {
               document.getElementById("content").innerHTML = parkData;
 
               document.getElementById("parkName").textContent = object.name;
-              document.getElementById("parkDescription").textContent =
-                object.description;
+              // document.getElementById("parkDescription").textContent =
+              //   object.description;
               document.getElementById("parkPicture").src = object.images[0];
             });
         });
@@ -36,7 +36,7 @@ function loadParks() {
             "../img/No_Image_Available.jpg";
         }
 
-        card.querySelector(".parkDescription").textContent = object.description;
+        // card.querySelector(".parkDescription").textContent = object.description;
 
         ul.appendChild(card);
       });

@@ -1,4 +1,5 @@
 import { getId } from "./commons.js";
+import { parkInstallationsCheckboxs } from "./const.js";
 
 let imageUrls = [];
 
@@ -17,6 +18,24 @@ function loadFormSugestions() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     validateForm();
+  });
+
+  //Cargar el listado de caracteristicas del parque
+  let installationsList = document.getElementById("parkInstallations");
+
+  parkInstallationsCheckboxs.forEach((value) => {
+    let input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = value.name; 
+    input.name = value.name; 
+
+    installationsList.appendChild(input);
+
+    let label = document.createElement("label");
+    label.setAttribute("for", value.name);
+    label.textContent = value.label;
+
+    installationsList.appendChild(label);
   });
 }
 
@@ -82,8 +101,6 @@ function sendInfo() {
   parksList.push(newPark);
 
   sessionStorage.setItem("parksValues", JSON.stringify(parksList));
-
 }
-
 
 export { loadFormSugestions, validateForm };

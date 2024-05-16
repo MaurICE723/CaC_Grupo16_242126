@@ -2,10 +2,10 @@ const parks = [
   {
     id: 1,
     name: "Parque Indoamericano",
-    description:
-      "Descripcion breve del Parque Indoamericano con zarasa de por medio",
+    description:  "Descripcion breve del Parque Indoamericano con zarasa de por medio",
     url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9281.979954590246!2d-58.470674785571205!3d-34.66289759145483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbe221cace7f%3A0xbd5ed689ede56280!2sParque%20Indoamericano!5e0!3m2!1sen!2sar!4v1712617303614!5m2!1sen!2sar",
-    images: ["https://www.clarin.com/img/2011/12/21/rJWI1bOCXx_1256x620.jpg"],
+    images: ["https://www.clarin.com/img/2011/12/21/rJWI1bOCXx_1256x620.jpg", "https://cauchocolor.com.ar/wp-content/uploads/2013/08/IMG637.jpg", "https://www.buenosaires123.com.ar/img/parque-indoamericano.jpg"],
+    installations:["Juegos","Bancos","Calesita"]
   },
   {
     id: 2,
@@ -143,31 +143,73 @@ const members = [
   {
     id: 0,
     name: "Ismar",
-    picture: "https://static.wikia.nocookie.net/sonic/images/b/b8/Sonic-Advance-Amy-Artwork.png",
+    picture:
+      "https://static.wikia.nocookie.net/sonic/images/b/b8/Sonic-Advance-Amy-Artwork.png",
     description: "[A completar con información]",
-    perks: ["persona 1","atributo 1", "atributo 2"]
+    perks: ["persona 1", "atributo 1", "atributo 2"],
   },
   {
     id: 1,
-    name: "Arian",
-    picture: "https://upload.wikimedia.org/wikipedia/en/0/06/Knuckles_the_Echidna.png",
+    name: "Desaparecido en accion",
+    picture:
+      "https://upload.wikimedia.org/wikipedia/en/0/06/Knuckles_the_Echidna.png",
     description: "[A completar con información]",
-    perks: ["persona 2","atributo 1", "atributo 2"]
+    perks: ["persona 2", "atributo 1", "atributo 2"],
   },
   {
     id: 2,
     name: "Lucas",
-    picture: "https://upload.wikimedia.org/wikipedia/en/4/41/ShadowTheHedgehogSA2.png",
+    picture:
+      "https://upload.wikimedia.org/wikipedia/en/4/41/ShadowTheHedgehogSA2.png",
     description: "[A completar con información]",
-    perks: ["persona 3","atributo 1", "atributo 2"]
+    perks: ["persona 3", "atributo 1", "atributo 2"],
   },
   {
     id: 3,
     name: "Mauricio",
     picture: "https://static.tvtropes.org/pmwiki/pub/images/metalsonic.png",
     description: "[A completar con información]",
-    perks: ["persona 4","atributo 1", "atributo 2"]
-  }
+    perks: ["persona 4", "atributo 1", "atributo 2"],
+  },
 ];
 
-export { parks, members };
+const parkInstallationsCheckboxs = [
+  {
+    name: "juegos",
+    label: "Juegos",
+  },
+  {
+    name: "bancos",
+    label: "Bancos",
+  },
+  {
+    name: "bebederos",
+    label: "Bebederos",
+  },
+  {
+    name: "areaEntrenamientoFisico",
+    label: "Area de entrenamiento físico",
+  },
+  {
+    name: "areaDeRehabilitación",
+    label: "Area de rehabilitación",
+  },
+  {
+    name: "canil",
+    label: "Canil",
+  },
+  {
+    name: "fuente",
+    label: "Fuente",
+  },
+  {
+    name: "pistaDePatinaje",
+    label: "Pista de patinaje",
+  },
+  {
+    name: "calesita",
+    label: "Calesita",
+  },
+];
+
+export { parks, members, parkInstallationsCheckboxs };

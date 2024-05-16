@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+  <link rel="stylesheet" href="../css/park.css" />
+</head>
+
 <body>
-    <div class="park">
-      <h2 id="parkName"></h2>
-      <img id="parkPicture" src="" alt="Imagen" />
-      <p id="parkDescription"></p>
+  <div class="park">
+    <div class="parkInformation">
+      <section class="parkTitle">
+        <a href="#"><img src="../../img/svg/prev.svg" alt="Anterior"></a>
+        <h1 id="parkName"></h1>
+        <a href="#"><img src="../../img/svg/next.svg" alt="Siguiente"></a>
+      </section>
+      <section class="parkDescription">
+        <div class="parkText">
+          <p id="parkDescription"></p>
+        </div>
+        <div id="parkInstallations" class="parkSpecs">
+
+        </div>
+      </section>
+      <section class="parkMap">
+        <iframe id="parkLocation" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
     </div>
+    <div class="parkGallery">
+      <div class="parkMainImageContainer">
+        <img id="parkPicture" src="" alt="Imagen" />
+      </div>
+      <div class="parkGalleryContainer" id="parkGalleryContainer">
+        <ul id="parkGalleryList"></ul>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

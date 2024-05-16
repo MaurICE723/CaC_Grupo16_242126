@@ -14,16 +14,49 @@ function loadParks() {
         const card = template.cloneNode(true);
 
         card.querySelector(".card").addEventListener("click", function () {
-
           fetch("../pages/templates/park.html")
             .then((response) => response.text())
             .then((parkData) => {
               document.getElementById("content").innerHTML = parkData;
 
               document.getElementById("parkName").textContent = object.name;
-              // document.getElementById("parkDescription").textContent =
-              //   object.description;
-              document.getElementById("parkPicture").src = object.images[0];
+              document.getElementById("parkDescription").textContent =
+                object.description;
+              document.getElementById("parkLocation").src = object.url;
+
+              let installations = object.installations || [];
+
+              if (object.images) {
+                document.getElementById("parkPicture").src = object.images[0];
+
+                let imageGallery = document.getElementById("parkGalleryList");
+
+                object.images.forEach((image) => {
+                  let li = document.createElement("li");
+                  let img = document.createElement("img");
+
+                  img.src = image;
+
+                  li.appendChild(img);
+                  li.setAttribute("class","galleryItem");
+                  imageGallery.appendChild(li);
+                })
+
+
+              } else {
+                card.querySelector(".parkPicture").src =
+                  "../img/No_Image_Available.jpg";
+              }
+
+              installations.forEach((value) => {
+                let installation = document.getElementById("parkInstallations");
+
+                let h4 = document.createElement("h4");
+                h4.textContent = value;
+                h4.setAttribute("class", "parkInstallation");
+
+                installation.appendChild(h4);
+              });
             });
         });
 
@@ -35,8 +68,6 @@ function loadParks() {
           card.querySelector(".parkMainImage").src =
             "../img/No_Image_Available.jpg";
         }
-
-        // card.querySelector(".parkDescription").textContent = object.description;
 
         ul.appendChild(card);
       });

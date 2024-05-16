@@ -3,7 +3,7 @@
   grid-template-rows: 4rem 1fr;
   height: 100%;
   margin-top: 0.625rem;
-  padding-left: 30px;
+  padding-left: 1.875rem;
 
   .sugestionsForm {
     display: grid;
@@ -13,7 +13,7 @@
 
     .sugestionsFormFields {
       /* width: 100%; */
-      padding-top: 10px;
+      padding-top: .625rem;
 
       .field {
         display: flex;
@@ -30,7 +30,7 @@
         .interests {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-around;
+          justify-content: flex-start;
           gap: 0.4375rem;
         }
 
@@ -40,11 +40,11 @@
 
         .interests label {
           display: block;
-          padding: 0.625rem 1.25rem;
+          padding: 0.325rem 1rem;
           margin-bottom: 0.3125rem;
           cursor: pointer;
           background-color: #e4e4e4;
-          border-radius: 0.25rem;
+          border-radius: 1rem;
         }
 
         .interests input[type="checkbox"]:checked + label {
@@ -59,14 +59,14 @@
       #imageGallery {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 10px;
+        margin-top: .625rem;
       }
 
       #imageGallery img {
-        width: 100px;
-        height: 100px;
-        margin-right: 10px;
-        margin-bottom: 10px;
+        width: 6.25rem;
+        height: 6.25rem;
+        margin-right: .625rem;
+        margin-bottom: .625rem;
       }
     }
   }

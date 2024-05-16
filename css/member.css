@@ -37,7 +37,7 @@
               padding: 5%;
             }
             .memberCharacteristics {
-              padding-left: 20px;
+              padding-left: 1.25rem;
               list-style-type: disc;
               li {
                 margin-bottom: 0.3125rem;
@@ -53,7 +53,7 @@
 
             .imageEffect {
               clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-              width: 120px;
+              width: 7.5rem;
               height: 7.5rem;
               transition: 0.3s;
               display: flex;
@@ -61,13 +61,13 @@
               justify-content: center;
               background: radial-gradient(#a0c49d, #c4d7b2);
               .memberPicture {
-                width: 220px;
+                width: 13.75rem;
                 transform: scale(0.5, 0.5);
               }
             }
             .imageEffect:hover {
               clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-              width: 220px;
+              width: 13.75rem;
               height: 7.5rem;
             }
           }

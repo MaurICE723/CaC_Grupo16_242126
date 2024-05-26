@@ -1,96 +1,52 @@
-.groupMembersSection {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin-bottom: 0.9375rem;
-
-  .sectionDescription {
-    padding: .9375rem;
+.member {
+    background-color: #a0c49d;
+    padding: .625rem;
+    border-radius: .3125rem;
+  .memberName {
+    margin-bottom: .3125rem;
+  }
+  .memberInfo {
     
-    .aboutTitle{
-        margin-bottom: .625rem;
-    }
-  }
+    div{
+        padding-bottom: .625rem;
 
-  .groupMembers {
-    overflow: auto;
-    scrollbar-width: none;
-
-    .membersList {
-      .member {
         display: grid;
-        grid-template-rows: 2rem 1fr;
-        background-color: #c4d7b2;
-        padding: 0.9375rem 0.9375rem;
-        margin: 0.625rem 0.9375rem 0 0.9375rem;
-        border-radius: .3125rem;
-        .memberName {
-          display: flex;
+        grid-template-columns: 1fr 1fr;
+        .memberCharacteristics {
+          padding-left: 1.25rem;
+          list-style-type: disc;
+          li {
+            margin-bottom: 0.3125rem;
+          }
+        }
+        .memberPictureContainer {
           align-items: center;
-        }
-
-        .memberInfo {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          div {
-            .memberDescription {
-              padding: 5%;
-            }
-            .memberCharacteristics {
-              padding-left: 1.25rem;
-              list-style-type: disc;
-              li {
-                margin-bottom: 0.3125rem;
-              }
-            }
-          }
-
-          .memberPictureContainer {
-            align-items: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .imageEffect {
+            clip-path: polygon(70% 0, 100% 0, 30% 100%, 0% 100%);
+            width: 8rem;
+            height: 7.5rem;
+            transition: 0.3s;
             display: flex;
-            justify-content: center;
             align-items: center;
-
-            .imageEffect {
-              clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-              width: 7.5rem;
-              height: 7.5rem;
-              transition: 0.3s;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background: radial-gradient(#a0c49d, #c4d7b2);
-              .memberPicture {
-                width: 13.75rem;
-                transform: scale(0.5, 0.5);
-              }
-            }
-            .imageEffect:hover {
-              clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            justify-content: center;
+            .memberPicture {
               width: 13.75rem;
-              height: 7.5rem;
+              transform: scale(0.5, 0.5);
             }
           }
+          .imageEffect:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            width: 7.5rem;
+            height: 7.5rem;
+          }
         }
-      }
     }
-  }
-}
-
-@media (min-width: 1024px) {
-  .groupMembers {
-    .membersList {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .groupMembers {
-    .membersList {
-      display: grid;
-      grid-template-columns: 1fr;
+    .memberDescription {
+        padding: 20px 5px 5px 5px;
+        border-top: 2px solid #4b8c09;
     }
   }
 }

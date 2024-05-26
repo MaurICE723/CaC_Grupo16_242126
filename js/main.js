@@ -20,6 +20,8 @@ function handleFirstLoad() {
 
   //cargo el listado de parques en la sesion. 
   sessionStorage.setItem("parksValues", null);
+
+  //limpio los parques cuando inicia, sino los va sumando cada vez que se recarga la pagina
   let parksList = JSON.parse(sessionStorage.getItem("parksValues")) || [];
 
   parks.forEach((element) => {

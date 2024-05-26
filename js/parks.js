@@ -1,5 +1,6 @@
 import {selectPark} from "./commons.js";
 
+//Cargo los parques a patir de su template
 function loadParks() {
   fetch("../pages/templates/card.html")
     .then((response) => response.text())

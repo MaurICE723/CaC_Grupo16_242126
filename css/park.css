@@ -1,11 +1,12 @@
 .park {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  
   height: 100%;
   overflow: auto;
   scrollbar-width: none;
+  display: flex;  
 
   .parkInformation {
+    
     .parkTitle {
       display: flex;
       flex-direction: row;
@@ -14,14 +15,28 @@
       padding: 0.625rem;
     }
 
+    .badge{
+      padding: 7px 21px;
+      border-radius: 5px;
+    }
+
+    .green{
+      background-color: #22b615;
+    }
+
+    .blue{
+      background-color: #1528b6;
+    }
+
+    .yellow{
+      background-color: #eae31a;
+    }
+
     .parkDescription {
-      display: flex;
-      flex-direction: row;
 
       .parkText {
         border-radius: 0.625rem;
         margin: 0.3125rem;
-        width: 100%;
         padding: 0.625rem;
         padding-bottom: 1.875rem;
         background-color: #c4d7b2;
@@ -30,7 +45,6 @@
       .parkSpecs {
         border-radius: 0.625rem;
         margin: 0.3125rem;
-        width: 100%;
         padding-bottom: 1.875rem;
         padding: 0.625rem;
         background-color: #c4d7b2;
@@ -47,18 +61,31 @@
           border-radius: 1rem;
         }
       }
-    }
-    .parkMap {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 0.625rem;
-      margin: .3125rem;
-      padding: .3125rem;
-      iframe {
-        border-radius: 0.625rem;
+
+      .noneSpecs{
+        display: none;
+        visibility: hidden;
       }
     }
+    .mapContainer{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      
+      .parkMap {
+        border-radius: 0.625rem;
+        margin: .3125rem;
+        padding: .3125rem;
+        width:37.5rem;
+        height:28.125rem; 
+  
+        iframe {
+          border-radius: 0.625rem;
+        }
+      }
+    }
+
+    mapContainer
   }
 
   .parkGallery {
@@ -94,5 +121,46 @@
         }
       }
     }
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .park{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .parkDescription {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .park{
+    display: grid;
+    grid-template-columns: 1fr ;
+  }
+  .parkDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .parkInformation {
+  }
+}
+
+@media (max-width: 767px) {
+  .park{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .parkDescription {
+    display: flex;
+    flex-direction: column;
+  }
+  .parkInformation {
+    width: 100vw;
+
   }
 }

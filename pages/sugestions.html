@@ -5,6 +5,9 @@
 </head>
 
 <body>
+  <div id="notification" class="notification success">
+    ¡Agregado exitosamente!
+  </div>
   <section class="contact">
     <div>
       <h1>Tu parque</h1>
@@ -14,7 +17,7 @@
     <div class="sugestionsForm">
       <form class="sugestionsFormFields" id="sugestionsForm" >
         <div class="field">
-          <label for="name">Nombre del parque:</label>
+          <label for="name">Nombre del parque: </label>
           <div class="textInput">
             <input type="text" id="name" name="name" autocomplete="off" />
             <span id="nameError" class="error"></span>
@@ -29,7 +32,7 @@
         </div>
 
         <div class="field">
-          <p>Que clase de lugar es?</p>
+          <label>Que clase de lugar es?</label>
           <div>
             <input type="radio" id="plaza" name="type" value="plaza" />
             <label for="plaza">Plaza</label>
@@ -38,16 +41,17 @@
             <input type="radio" id="lugarHistorico" name="type" value="lugarHistorico" />
             <label for="lugarHistorico">Lugar historico</label>
           </div>
+          <span id="typeError" class="error"></span>
         </div>
         <div class="field">
-          <p>Instalaciones:</p>
+          <label>Instalaciones:</label>
           <div id="parkInstallations" class="interests">
           </div>
         </div>
         <div class="field">
           <label for="name">Ubicación:</label>
           <div class="textInput">
-            <input type="text" id="location" name="location" />
+            <input type="text" id="location" name="location" placeholder="Ingrese la url del mapa embebido, solo el valor del src." alt="Ingrese la url del mapa embebido, solo el valor del src." />
             <span id="locationError" class="error"></span>
           </div>
         </div>
@@ -63,6 +67,9 @@
       <lottie-player id="animation" src="../img/animations/contactUs.json" background="transparent" speed="1"
         style="width: 300px; height: 300px" loop autoplay />
     </div>
+    <section>
+      
+    </section>
   </section>
 
 </body>

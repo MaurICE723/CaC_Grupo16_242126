@@ -1,11 +1,26 @@
+// Constantes que se utilizaran.
+
+//listado de parques
 const parks = [
+  {
+    id: 0,
+    name: "República de los Niños",
+    description:
+      "Descripcion breve del Parque Indoamericano con zarasa de por medio",
+    url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.7073878055994!2d-58.022830207248404!3d-34.88869344623971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2dded89c33c53%3A0x3bbaa42c765db4d4!2sRep%C3%BAblica%20de%20los%20Ni%C3%B1os!5e0!3m2!1sen!2sar!4v1712638287705!5m2!1sen!2sar",
+    images: [
+      "https://www.lanacion.com.ar/resizer/v2/varias-generaciones-pasearon-por-estas-calles-de-SZOWRC43AJEELBFXC3SFRBZSLA.JPG?auth=f0e6209511f621d5377eb9a53565c07dbc14a05bc1e11181ced64b29a4356a1b&width=880&height=586&quality=70&smart=true",
+    ],
+    type:"parque"
+  },
   {
     id: 1,
     name: "Parque Indoamericano",
     description:  "Descripcion breve del Parque Indoamericano con zarasa de por medio",
     url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9281.979954590246!2d-58.470674785571205!3d-34.66289759145483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbe221cace7f%3A0xbd5ed689ede56280!2sParque%20Indoamericano!5e0!3m2!1sen!2sar!4v1712617303614!5m2!1sen!2sar",
     images: ["https://www.clarin.com/img/2011/12/21/rJWI1bOCXx_1256x620.jpg", "https://cauchocolor.com.ar/wp-content/uploads/2013/08/IMG637.jpg", "https://www.buenosaires123.com.ar/img/parque-indoamericano.jpg"],
-    installations:["Juegos","Bancos","Calesita"]
+    installations:["Juegos","Bancos","Calesita"],
+    type:"parque"
   },
   {
     id: 2,
@@ -16,6 +31,7 @@ const parks = [
     images: [
       "https://turismo.buenosaires.gob.ar/sites/turismo/files/torre_parque_de_la_ciudad_1200.jpg",
     ],
+    type:"parque"
   },
   {
     id: 3,
@@ -26,6 +42,7 @@ const parks = [
     images: [
       "https://buenosaires.gob.ar/sites/default/files/media/image/2014/07/09/eb2ca0cc2270b8ee8813a93f16559498c6202051.jpg",
     ],
+    type:"parque"
   },
   {
     id: 4,
@@ -36,6 +53,7 @@ const parks = [
     images: [
       "https://buenosaires.gob.ar/sites/default/files/styles/full_width/public/media/image/2014/07/09/3a908bedeae89eab349941c278c58c4631d7ee17.jpg?itok=j1Pr_tJI",
     ],
+    type:"parque"
   },
   {
     id: 5,
@@ -46,6 +64,7 @@ const parks = [
     images: [
       "https://buenosaires.gob.ar/sites/default/files/styles/full_width/public/2023-03/DSC_0685.jpg?itok=ZBaRJAIm",
     ],
+    type:"parque"
   },
   {
     id: 6,
@@ -56,6 +75,7 @@ const parks = [
     images: [
       "https://turismo.buenosaires.gob.ar/sites/turismo/files/rosedal1500x610-2023.jpg",
     ],
+    type:"parque"
   },
   {
     id: 7,
@@ -66,6 +86,7 @@ const parks = [
     images: [
       "https://jardinjapones.org.ar/images/slides/48_BgEJGJhiy76x1utV.jpg",
     ],
+    type:"parque"
   },
   {
     id: 8,
@@ -76,6 +97,7 @@ const parks = [
     images: [
       "https://buenosaires.gob.ar/sites/default/files/media/image/2017/11/16/03f50b82b0036e11bb84ea10468346d5305419bf.jpg",
     ],
+    type:"parque"
   },
   {
     id: 9,
@@ -86,6 +108,7 @@ const parks = [
     images: [
       "https://www.argentina.gob.ar/sites/default/files/plaza_general_san_martin_azul.jpg",
     ],
+    type:"plaza"
   },
   {
     id: 10,
@@ -96,6 +119,7 @@ const parks = [
     images: [
       "https://turismo.buenosaires.gob.ar/sites/turismo/files/monumento%20dos%20congresos_0.jpg",
     ],
+    type:"plaza"
   },
   {
     id: 11,
@@ -106,6 +130,7 @@ const parks = [
     images: [
       "https://turismo.buenosaires.gob.ar/sites/turismo/files/field/image/parque_lezama_1200.jpg",
     ],
+    type:"parque"
   },
   {
     id: 12,
@@ -116,6 +141,7 @@ const parks = [
     images: [
       "https://buenosaires.gob.ar/sites/default/files/styles/full_width/public/media/image/2015/08/06/abafd2206e1b8b69b33c8ffe72b56bce192a357c.jpg?itok=j9px8HDe",
     ],
+    type:"parque"
   },
   {
     id: 13,
@@ -126,53 +152,44 @@ const parks = [
     images: [
       "https://es.gopatagonic.com/wp-content/uploads/2019/10/0015-Centro-Civico-1024x576.jpg",
     ],
-  },
-  {
-    id: 14,
-    name: "República de los Niños",
-    description:
-      "Descripcion breve del Parque Indoamericano con zarasa de por medio",
-    url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.7073878055994!2d-58.022830207248404!3d-34.88869344623971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2dded89c33c53%3A0x3bbaa42c765db4d4!2sRep%C3%BAblica%20de%20los%20Ni%C3%B1os!5e0!3m2!1sen!2sar!4v1712638287705!5m2!1sen!2sar",
-    images: [
-      "https://www.lanacion.com.ar/resizer/v2/varias-generaciones-pasearon-por-estas-calles-de-SZOWRC43AJEELBFXC3SFRBZSLA.JPG?auth=f0e6209511f621d5377eb9a53565c07dbc14a05bc1e11181ced64b29a4356a1b&width=880&height=586&quality=70&smart=true",
-    ],
-  },
+    type:"plaza"
+  }
+
 ];
 
+//Listado de integrantes
 const members = [
   {
     id: 0,
-    name: "Ismar",
-    picture:
-      "https://static.wikia.nocookie.net/sonic/images/b/b8/Sonic-Advance-Amy-Artwork.png",
-    description: "[A completar con información]",
-    perks: ["persona 1", "atributo 1", "atributo 2"],
+    name: "Mauricio",
+    picture: "https://media.licdn.com/dms/image/C4E03AQFDfAGnsXt40w/profile-displayphoto-shrink_400_400/0/1655838584770?e=1721865600&v=beta&t=WUZWYrQEGGP53NCNgFIBWKs8n59w67lkBaBygrbKIX4",
+    description: 'El último en pié, alguien tenía que hacer el trabajo y era el único "voluntario". Responsable del diseño, maquetado, codificacoin y QA',
+    perks: ["Desarrollador", "Padre", "Degustador de videojuego", "Lector de Mangas y comics"],
   },
   {
     id: 1,
-    name: "Desaparecido en accion",
-    picture:
-      "https://upload.wikimedia.org/wikipedia/en/0/06/Knuckles_the_Echidna.png",
-    description: "[A completar con información]",
-    perks: ["persona 2", "atributo 1", "atributo 2"],
+    name: null,
+    picture: null,
+    description: null,
+    perks: [],
   },
   {
     id: 2,
-    name: "Lucas",
-    picture:
-      "https://upload.wikimedia.org/wikipedia/en/4/41/ShadowTheHedgehogSA2.png",
-    description: "[A completar con información]",
-    perks: ["persona 3", "atributo 1", "atributo 2"],
+    name: null,
+    picture: null,
+    description: null,
+    perks: [],
   },
   {
     id: 3,
-    name: "Mauricio",
-    picture: "https://static.tvtropes.org/pmwiki/pub/images/metalsonic.png",
-    description: "[A completar con información]",
-    perks: ["persona 4", "atributo 1", "atributo 2"],
-  },
+    name: null,
+    picture: null,
+    description: null,
+    perks: [],
+  }
 ];
 
+//Listado de tipos de instalaciones de los parques
 const parkInstallationsCheckboxs = [
   {
     name: "juegos",

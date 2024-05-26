@@ -3,10 +3,14 @@ import { parkInstallationsCheckboxs } from "./const.js";
 
 let imageUrls = [];
 
+
+//Se ejecuta cuando se carga la pagina de sugerencias.  
 function loadFormSugestions() {
+
+  // agrega e evento para inluir la imagen indicada
   document.getElementById("addImage").addEventListener("click", () => {
-    var imageUrlInput = document.getElementById("imageUrl");
-    var imageUrl = imageUrlInput.value.trim();
+    let imageUrlInput = document.getElementById("imageUrl");
+    let imageUrl = imageUrlInput.value.trim();
     if (imageUrl !== "") {
       imageUrls.push(imageUrl);
       imageUrlInput.value = "";
@@ -14,6 +18,7 @@ function loadFormSugestions() {
     }
   });
 
+  // agrega el evento para el submit
   const form = document.getElementById("sugestionsForm");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -21,13 +26,14 @@ function loadFormSugestions() {
   });
 
   //Cargar el listado de caracteristicas del parque
+  // el listado de caracteristicas viene desde las constantes, asi que puede varias, por lo que se carga dinamicamente. 
   let installationsList = document.getElementById("parkInstallations");
 
   parkInstallationsCheckboxs.forEach((value) => {
     let input = document.createElement("input");
     input.type = "checkbox";
     input.id = value.name; 
-    input.name = value.name; 
+    input.name = "installations"; 
 
     installationsList.appendChild(input);
 
@@ -39,24 +45,28 @@ function loadFormSugestions() {
   });
 }
 
+// carga la imagen en la mini galeria
 function displayImages() {
-  var gallery = document.getElementById("imageGallery");
+  let gallery = document.getElementById("imageGallery");
   gallery.innerHTML = "";
   imageUrls.forEach(function (url) {
-    var img = document.createElement("img");
+    let img = document.createElement("img");
     img.src = url;
     gallery.appendChild(img);
   });
 }
 
+
+//validaciones del formulario
 function validateForm(event) {
-  var name = document.getElementById("name").value;
-  // var email = document.getElementById("email").value;
-  // var message = document.getElementById("message").value;
+  let name = document.getElementById("name").value;
+  let radioButtons = document.querySelectorAll('input[name="type"]');
+  let location = document.getElementById("location").value;
 
-  var isValid = true;
+  let isValid = true;
 
-  if (name == "") {
+  //Nombre
+  if (!name) {
     document.getElementById("nameError").textContent =
       "Por favor, ingresa un nombre de parque";
     isValid = false;
@@ -64,21 +74,23 @@ function validateForm(event) {
     document.getElementById("nameError").textContent = "";
   }
 
-  // if (email == "") {
-  //   document.getElementById("emailError").textContent =
-  //     "Por favor, ingresa tu email";
-  //   isValid = false;
-  // } else {
-  //   document.getElementById("emailError").textContent = "";
-  // }
+  //Tipo de parque
+  if (!Array.from(radioButtons).some(radioButton => radioButton.checked)) {
+    document.getElementById("typeError").textContent =
+      "Hay que seleccionar un tipo de parque";
+    isValid = false;
+  } else {
+    document.getElementById("typeError").textContent = "";
+  }
 
-  // if (message == "") {
-  //   document.getElementById("messageError").textContent =
-  //     "Por favor, ingresa tu mensaje";
-  //   isValid = false;
-  // } else {
-  //   document.getElementById("messageError").textContent = "";
-  // }
+  //Ubicacion 
+  if (!location ) {
+    document.getElementById("locationError").textContent =
+      "Se necesita la ubicacion del parque";
+    isValid = false;
+  } else {
+    document.getElementById("locationError").textContent = "";
+  }
 
   if (isValid) {
     sendInfo();
@@ -87,20 +99,48 @@ function validateForm(event) {
   return isValid;
 }
 
+
+//Envia el formulario para cargar el parque en el home
 function sendInfo() {
+  let radioButtons = document.querySelectorAll('input[name="type"]');
+  let selectedPark = Array.from(radioButtons).find(radioButton => radioButton.checked);
+
+  const checkboxes = document.querySelectorAll('input[name="installations"]:checked');
+  const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.id);
+
   let newPark = {
     id: getId(),
     name: document.getElementById("name").value,
     description: document.getElementById("description").value,
     url: document.getElementById("location").value,
-    images: [document.getElementById("imageUrl").value],
+    images: imageUrls ? imageUrls : [],
+    type: selectedPark.value,
+    installations: selectedValues
+
   };
 
   let parksList = JSON.parse(sessionStorage.getItem("parksValues"));
 
+  // Agrega el parque a la lista
   parksList.push(newPark);
 
+  // muestra la notificacion
   sessionStorage.setItem("parksValues", JSON.stringify(parksList));
+  
+  // muestra la notificacion de que se agregó exitosamente
+  showNotification() ;
+}
+
+
+// activa el mensaje de la notificacion
+function showNotification() {
+  var notification = document.getElementById("notification");
+  notification.classList.add("show");
+
+  // Ocultar la notificación después de 3 segundos
+  setTimeout(function(){
+      notification.classList.remove("show");
+  }, 3000);
 }
 
 export { loadFormSugestions, validateForm };

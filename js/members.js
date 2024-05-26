@@ -19,10 +19,10 @@ function loadMembers() {
         const member = template.cloneNode(true);
 
         // nombre del integrante
-        member.querySelector(".memberName").textContent = object.name;
+        member.querySelector(".memberName").textContent = object.name || "- - Missing in Action - -";
 
         // caracteristicas
-        let memberCharsList = object.perks;
+        let memberCharsList = object.perks || [];
         let charasteristics = member.querySelector(".memberCharacteristics");
 
         memberCharsList.forEach(function (perk) {
@@ -37,12 +37,12 @@ function loadMembers() {
           member.querySelector(".memberPicture").src = object.picture;
         } else {
           member.querySelector(".memberPicture").src =
-            "../img/No_Image_Available.jpg";
+            "../img/Missing_In_Action.png";
         }
 
         // descripcion
         member.querySelector(".memberDescription").textContent =
-          object.description;
+          object.description || " - - Missing in action - - ";
 
         ul.appendChild(member);
       });

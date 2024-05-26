@@ -4,21 +4,24 @@
   height: 100%;
   margin-top: 0.625rem;
   padding-left: 1.875rem;
+  overflow: auto;
+  scrollbar-width: none;
+
 
   .sugestionsForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: start;
+    margin-bottom: 1.25rem;
 
     .sugestionsFormFields {
-      /* width: 100%; */
       padding-top: .625rem;
 
       .field {
         display: flex;
         flex-direction: column;
-        margin-bottom: 0.625rem;
+        margin-bottom: 1rem;
         label {
           margin-bottom: 0.3125rem;
         }
@@ -51,6 +54,9 @@
           background-color: #a0c49d;
           color: #fff;
         }
+        .error {
+          color: red;
+        }
       }
       .buttons {
         display: flex;
@@ -71,15 +77,37 @@
     }
   }
 }
+.notification {
+  visibility: hidden; 
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #4CAF50; 
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.notification.show {
+  visibility: visible;
+  opacity: 1;
+}
 
 @media (min-width: 1024px) {
   .sugestionsForm{
-
+    display: flex;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .animation{
+  #animation{
     display: none;
   }
   .sugestionsForm{
@@ -88,7 +116,7 @@
 }
 
 @media (max-width: 767px) {
-  .animation{
+  #animation{
     display: none;
   }
   .sugestionsForm{

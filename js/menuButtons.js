@@ -2,6 +2,7 @@ import { loadParks } from "./parks.js";
 import { loadMembers } from "./members.js";
 import { loadFormSugestions } from "./sugestions.js";
 
+//Defino los botones
 const botones = [
   {
     label: "Home",
@@ -29,6 +30,7 @@ const botones = [
   },
 ];
 
+//Al cargar inicialmente se cargan los botones del menú
 function loadButtons() {
   var typeButtonsMenu = document.getElementById("botonera");
   botones.forEach(function (objeto) {
@@ -72,6 +74,8 @@ function loadButtons() {
   });
 }
 
+
+// Carga el contenido de la pagina segun el boton que se haya oprimido
 function loadPage() {
   let pageValue = sessionStorage.getItem("page");
 
